@@ -10,4 +10,8 @@ class TestRiver < Minitest::Test
     @river1 = River.new("Forth")
   end
 
+  def test_get_name
+    assert_equal("Forth", @river1.name)
+  end
+
 end
