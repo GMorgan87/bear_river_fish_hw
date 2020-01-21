@@ -4,6 +4,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative('../river')
 require_relative('../fish')
+# require_relative('../bear')
 
 class TestRiver < Minitest::Test
 
@@ -27,16 +28,12 @@ class TestRiver < Minitest::Test
 
   def test_lose_fish
     taken_fish = @river1.lose_fish
-    assert_equal("Billy Bass", taken_fish.name)
+    #check fish is removed
     assert_equal(2, @river1.fish_count)
+    #check fish object is returned
+    assert_equal("Billy Bass", taken_fish.name)
+
   end
 
-
-
-
-  # def test_add_fish
-  #   @river1.add_fish(@new_fishes)
-  #   assert_equal(3, @river1.fish_count)
-  # end
 
 end
